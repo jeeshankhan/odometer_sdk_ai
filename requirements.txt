@@ -1,0 +1,15 @@
+# Core
+numpy>=1.24
+opencv-python>=4.9
+Pillow>=10.0
+
+# Training (only needed once you start Phase 1-4)
+ultralytics>=8.3        # YOLOv11 training/inference
+torch>=2.2
+torchvision>=0.17
+onnx>=1.16
+onnxruntime>=1.18
+albumentations>=1.4     # augmentation for training
+
+# Annotation / tooling (optional)
+label-studio-sdk>=1.0

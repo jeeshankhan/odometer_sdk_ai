@@ -1,0 +1,27 @@
+name: odometer_sdk
+description: Flutter plugin for OdometerSDK - reads odometer values from images.
+version: 0.1.0
+homepage:
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.odometersdk
+        pluginClass: OdometerSdkPlugin
+      ios:
+        pluginClass: OdometerSdkPlugin

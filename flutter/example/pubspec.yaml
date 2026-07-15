@@ -1,0 +1,22 @@
+name: odometer_sdk_example
+description: Demo app showing how to use the odometer_sdk Flutter plugin.
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  odometer_sdk:
+    path: ../
+  image_picker: ^1.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
