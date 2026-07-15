@@ -21,7 +21,7 @@ class ConfidenceDecision:
 
 def evaluate_confidence(
     digit_confidences: list[float],
-    accept_threshold: float = 0.97,
+    accept_threshold: float = 0.90,
     retry_threshold: float = 0.80,
     max_low_digits_for_retry: int = 2,
 ) -> ConfidenceDecision:
