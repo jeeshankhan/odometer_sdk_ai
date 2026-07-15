@@ -20,8 +20,14 @@ OdometerSDK/
 ├── recognition/         ONNX Runtime wrapper for digit-sequence recognition (mock fallback)
 ├── validation/          confidence engine + business rules (fully functional)
 ├── api/                 Python reference SDK tying everything together
-├── android/             Kotlin SDK skeleton (ONNX Runtime Android)
-├── flutter/              Flutter plugin skeleton (MethodChannel bridge to the Android/iOS SDK)
+├── android/             Standalone Kotlin SDK reference (ONNX Runtime Android) - for pure-native
+│                        Android apps that aren't using Flutter. NOT what Flutter builds.
+├── flutter/              Flutter plugin - this is what `flutter pub get` actually compiles.
+│                        flutter/android/ has its OWN copy of the Kotlin source files
+│                        (Detector.kt, Recognizer.kt, etc.) because a Flutter plugin module
+│                        can't depend on a sibling Gradle project outside its own folder.
+│                        ⚠️ If you edit SDK logic, update BOTH android/ and flutter/android/,
+│                        or better: delete android/ and treat flutter/android/ as the only copy.
 ├── sample_app/           end-to-end demo script using synthetic images
 └── documentation/        phase-by-phase build notes
 ```
