@@ -17,6 +17,15 @@ import org.opencv.core.Mat
  */
 class OdometerSDK(private val context: Context) {
 
+    companion object {
+        // OpenCV's Java classes (Mat, Imgproc, etc.) are thin JNI wrappers around
+        // a native .so - it has to be loaded explicitly once before any OpenCV
+        // class is touched, or every call throws UnsatisfiedLinkError.
+        init {
+            System.loadLibrary("opencv_java4")
+        }
+    }
+
     private val qualityChecker = QualityChecker()
     private val detector = Detector(context)
     private val recognizer = Recognizer(context)

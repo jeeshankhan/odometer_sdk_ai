@@ -17,6 +17,12 @@ import org.opencv.core.Mat
  */
 class OdometerSDK(private val context: Context) {
 
+    companion object {
+        init {
+            System.loadLibrary("opencv_java4")
+        }
+    }
+
     private val qualityChecker = QualityChecker()
     private val detector = Detector(context)
     private val recognizer = Recognizer(context)
